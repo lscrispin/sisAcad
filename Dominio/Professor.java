@@ -12,10 +12,12 @@ public class Professor {
 
     }
 
-    public Professor(String _nome, int _matricula){
+    public Professor(String _nome, int _matricula, Unidade u){
         this.nome = _nome;
         this.matricula = _matricula;
         this.turmas = new ArrayList<Turma>();
+        this.unidade = u;
+        u.addProfessor(this);
     }
 
     public String getNome() {
@@ -40,5 +42,13 @@ public class Professor {
 
     public void addTurma(Turma turma){
         this.turmas.add(turma);
+    }
+
+    public void setUnidade(Unidade unidade) {
+        this.unidade = unidade;
+    }
+
+    public void setTurmas(ArrayList<Turma> turmas) {
+        this.turmas = turmas;
     }
 }
